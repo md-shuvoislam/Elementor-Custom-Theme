@@ -143,6 +143,7 @@ function picchi_scripts() {
 
 	wp_enqueue_style('theme-font', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
 	wp_enqueue_style('bootstrap', get_template_directory_uri(). '/assets/css/bootstrap.min.css', array(), '1.0.0', 'all');
+	wp_enqueue_style('font-awesame', get_template_directory_uri(). '/assets/css/fontawsame.min.css', array(), '1.0.0', 'all');
 	wp_enqueue_style('theme-main-css', get_template_directory_uri(). '/assets/css/custom-theme.css', array(), '1.0.0', 'all');
 
 	wp_enqueue_style( 'picchi-style', get_stylesheet_uri(), array(), _S_VERSION );
