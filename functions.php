@@ -140,10 +140,18 @@ add_action( 'widgets_init', 'picchi_widgets_init' );
  * Enqueue scripts and styles.
  */
 function picchi_scripts() {
+
+	wp_enqueue_style('theme-font', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+	wp_enqueue_style('bootstrap', get_template_directory_uri(). '/assets/css/bootstrap.min.css', array(), '1.0.0', 'all');
+	wp_enqueue_style('theme-main-css', get_template_directory_uri(). '/assets/css/custom-theme.css', array(), '1.0.0', 'all');
+
 	wp_enqueue_style( 'picchi-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'picchi-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'picchi-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+
+	wp_enqueue_script( 'popper-js', get_template_directory_uri() . '/assets/js/popper.min.js', array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
